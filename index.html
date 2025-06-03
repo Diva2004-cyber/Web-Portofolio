@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diva Prayoga - Freelancer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F8FF; /* AliceBlue - a very light blue, like a calm sky */
+        }
+        .ocean-gradient {
+            background: linear-gradient(135deg, #0077BE 0%, #00A8E8 100%); /* Shades of blue for ocean feel */
+        }
+        .wave-divider {
+            position: relative;
+            width: 100%;
+            height: 100px; /* Adjust height as needed */
+            overflow: hidden;
+        }
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+        .card-hover {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-title {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 700;
+            color: #003B73; /* Dark blue for titles */
+            margin-bottom: 1.5rem; /* 24px */
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            color: #005A9C; /* Medium blue for subtitles */
+            text-align: center;
+            margin-bottom: 3rem; /* 48px */
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-primary {
+            background-color: #00A8E8; /* Bright blue for buttons */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #0077BE; /* Darker blue on hover */
+        }
+        .btn-primary:disabled {
+            background-color: #A0AEC0; /* Gray when disabled */
+            cursor: not-allowed;
+        }
+        .icon-style {
+            font-size: 1.5rem; /* 24px */
+            color: #0077BE;
+            transition: color 0.3s ease;
+        }
+        .icon-style:hover {
+            color: #00A8E8;
+        }
+        nav a {
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00A8E8;
+        }
+        .ai-idea-card {
+            background-color: #E0F2FE; /* Light cyan */
+            border-left: 4px solid #00A8E8; /* Accent border */
+        }
+        .form-status-message {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+        .form-status-message.success {
+            background-color: #D1FAE5; /* Green-100 */
+            color: #065F46; /* Green-700 */
+        }
+        .form-status-message.error {
+            background-color: #FEE2E2; /* Red-100 */
+            color: #991B1B; /* Red-700 */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#003B73]">Diva Prayoga</a>
+            <div class="space-x-4">
+                <a href="#hero" class="text-gray-700 hover:text-[#00A8E8]">Beranda</a>
+                <a href="#about" class="text-gray-700 hover:text-[#00A8E8]">Tentang Saya</a>
+                <a href="#skills" class="text-gray-700 hover:text-[#00A8E8]">Keahlian</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-[#00A8E8]">Portofolio</a>
+                <a href="#ai-consultation" class="text-gray-700 hover:text-[#00A8E8]">✨ Konsultasi AI</a>
+                <a href="#contact" class="text-gray-700 hover:text-[#00A8E8]">Kontak</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="ocean-gradient text-white py-20 md:py-32 relative">
+        <div class="container mx-auto px-6 text-center">
+            <img src="assets/images/diva-prayoga.jpg" alt="Foto Profil Diva Prayoga" onerror="this.onerror=null;this.src='https://placehold.co/150x150/FFFFFF/0077BE?text=DP';" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-8 border-4 border-white shadow-lg">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Halo, Saya Diva Prayoga</h1>
+            <p class="text-xl md:text-2xl mb-8">Freelancer Kreatif dengan Keahlian di Web Development & AI.</p>
+            <a href="#portfolio" class="btn-primary text-lg">Lihat Portofolio Saya</a>
+        </div>
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 67C303 67 480 20 720 20C960 20 1137 67 1440 67V100H0V67Z" fill="#F0F8FF"/>
+            </svg>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Tentang Saya</h2>
+            <p class="section-subtitle">
+                Saya adalah seorang freelancer yang bersemangat dalam menciptakan solusi digital inovatif. Dengan latar belakang yang kuat dalam pengembangan web dan ketertarikan mendalam pada teknologi AI, saya berdedikasi untuk membantu klien mencapai tujuan mereka melalui teknologi.
+            </p>
+            <div class="text-center max-w-3xl mx-auto text-gray-700 leading-relaxed">
+                <p class="mb-4">
+                    Sejak memulai karir saya, saya selalu fokus pada bagaimana teknologi dapat digunakan untuk memecahkan masalah nyata dan menciptakan pengalaman pengguna yang luar biasa. Saya percaya bahwa kombinasi antara desain yang menarik, fungsionalitas yang solid, dan teknologi terkini adalah kunci untuk proyek yang sukses.
+                </p>
+                <p>
+                    Di luar pekerjaan, saya suka menjelajahi tren teknologi terbaru, berkontribusi pada proyek open-source, dan menikmati keindahan alam, yang sering menjadi inspirasi dalam pekerjaan kreatif saya.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Keahlian Utama Saya</h2>
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-laptop-code text-4xl text-[#0077BE] mb-3"></i>
+                        <h3 class="text-2xl font-semibold text-[#003B73] mb-2">Membuat Website</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Saya ahli dalam merancang dan membangun website profesional dengan tampilan yang modern, responsif, dan interaktif. Menguasai teknologi frontend seperti HTML, CSS, dan JavaScript, serta backend menggunakan PHP dan Node.js. Dengan fokus pada user experience dan performa, saya mampu menghadirkan website yang tidak hanya menarik secara visual tapi juga optimal dari sisi fungsi dan kecepatan.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-video text-4xl text-[#0077BE] mb-3"></i>
+                        <h3 class="text-2xl font-semibold text-[#003B73] mb-2">AI Video Konten Generatif</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Saya mengembangkan kemampuan untuk membuat video kreatif secara otomatis hanya dari prompt teks. Proses pembuatan video ini meliputi generasi narasi suara yang natural, penambahan musik latar yang sesuai, serta sound effect dinamis yang meningkatkan kualitas storytelling. Dengan memanfaatkan teknologi AI generatif terbaru, saya dapat mempercepat produksi konten video untuk berbagai kebutuhan.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg card-hover">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-cogs text-4xl text-[#0077BE] mb-3"></i>
+                         <h3 class="text-2xl font-semibold text-[#003B73] mb-2">Otomatisasi AI & AI Agent</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Saya membangun sistem otomatisasi cerdas yang mengintegrasikan AI untuk mempercepat produksi konten, pengelolaan media sosial, hingga layanan interaktif seperti chatbot dan AI agent. Dengan pendekatan workflow yang terotomatisasi, saya membantu mengurangi beban kerja manual sekaligus meningkatkan produktivitas dan kualitas hasil kerja.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Portofolio Proyek</h2>
+            <p class="section-subtitle">Berikut adalah beberapa proyek yang telah saya kerjakan. Setiap proyek menunjukkan dedikasi saya terhadap kualitas dan inovasi.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://placehold.co/600x400/00A8E8/FFFFFF?text=Proyek+Buat Website" alt="[Gambar Proyek Website E-commerce]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#003B73] mb-2">Pengembangan Web Dapoerminang </h3>
+                        <p class="text-gray-600 text-sm mb-4">Membangun situs web untuk usaha kuliner Dapoerminang, lengkap dengan katalog menu interaktif, sistem pemesanan online, dan tampilan yang ramah pengguna serta sesuai identitas visual brand Minangkabau. Website ini didesain responsif dan dioptimalkan untuk perangkat mobile, dengan backend berbasis PHP serta integrasi WhatsApp untuk pemesanan langsung..</p>
+                        <a href="#" class="text-[#0077BE] hover:text-[#00A8E8] font-semibold">Lihat Detail <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://placehold.co/600x400/0077BE/FFFFFF?text=AI Workflow dan Ai Agent" alt="[Gambar Aplikasi AI Chatbot]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#003B73] mb-2">Aplikasi AI Chatbot Cerdas</h3>
+                        <p class="text-gray-600 text-sm mb-4">Pembuatan chatbot berbasis AI untuk layanan pelanggan otomatis yang meningkatkan efisiensi.</p>
+                        <a href="#" class="text-[#0077BE] hover:text-[#00A8E8] font-semibold">Lihat Detail <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://placehold.co/600x400/005A9C/FFFFFF?text=Video+AI Bye Veo 3" alt="[Gambar Video Promosi AI]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-[#003B73] mb-2">Video Promosi Generatif AI</h3>
+                        <p class="text-gray-600 text-sm mb-4">Produksi video promosi menggunakan teknologi AI generatif untuk konten yang menarik dan cepat.</p>
+                        <a href="#" class="text-[#0077BE] hover:text-[#00A8E8] font-semibold">Lihat Detail <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-consultation" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">✨ Konsultasi Ide Proyek AI</h2>
+            <p class="section-subtitle">Punya tantangan bisnis atau ide yang ingin diwujudkan dengan AI? Jelaskan singkat di bawah ini, dan dapatkan beberapa gagasan proyek AI yang bisa saya bantu kembangkan!</p>
+            
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+                <div class="mb-6">
+                    <label for="businessChallenge" class="block text-gray-700 font-semibold mb-2">Deskripsi Bisnis/Tantangan Anda:</label>
+                    <textarea id="businessChallenge" name="businessChallenge" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#00A8E8] focus:border-[#00A8E8]" placeholder="Contoh: Saya ingin meningkatkan interaksi pelanggan di toko online fashion saya..."></textarea>
+                </div>
+                <div class="text-center mb-6">
+                    <button id="getAiIdeasBtn" class="btn-primary text-lg">
+                        <i class="fas fa-lightbulb mr-2"></i>Dapatkan Ide Proyek AI ✨
+                    </button>
+                </div>
+                <div id="aiIdeasResult" class="mt-6">
+                    <p id="loadingMessage" class="text-center text-gray-600 hidden"><i class="fas fa-spinner fa-spin mr-2"></i>Sedang memproses permintaan Anda...</p>
+                    <div id="ideasContainer"></div>
+                    <p id="errorMessage" class="text-center text-red-500 hidden">Maaf, terjadi kesalahan. Coba lagi nanti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Blog & Berita Terbaru</h2>
+            <p class="section-subtitle">Ikuti perkembangan terbaru, wawasan industri, dan pemikiran saya tentang teknologi dan kreativitas.</p>
+            <div class="text-center text-gray-600">
+                <p>Bagian blog akan segera hadir. Nantikan artikel-artikel menarik!</p>
+                <img src="https://placehold.co/800x300/E0F2FE/0077BE?text=Blog+Segera+Hadir" alt="[Ilustrasi Blog Segera Hadir]" class="mt-8 mx-auto rounded-lg shadow-md max-w-lg w-full">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <p class="section-subtitle">Tertarik untuk berkolaborasi atau memiliki pertanyaan? Jangan ragu untuk menghubungi saya.</p>
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <form id="contactForm"> <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Nama Anda</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#00A8E8] focus:border-[#00A8E8]" placeholder="John Doe" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email_contact" class="block text-gray-700 font-semibold mb-2">Email Anda</label>
+                        <input type="email" id="email_contact" name="email_contact" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#00A8E8] focus:border-[#00A8E8]" placeholder="john.doe@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Pesan Anda</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-[#00A8E8] focus:border-[#00A8E8]" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary w-full md:w-auto">Kirim Pesan</button>
+                    </div>
+                </form>
+                <div id="formStatus" class="form-status-message hidden"></div> <div class="mt-12 text-center">
+                    <p class="text-gray-700 font-semibold mb-4">Atau hubungi saya melalui:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="mailto:amuadnasir@gmail.com" class="text-gray-600 hover:text-[#0077BE]" title="Email">
+                            <i class="fas fa-envelope icon-style"></i>
+                        </a>
+                        <a href="https://wa.me/6281770639966" target="_blank" class="text-gray-600 hover:text-[#0077BE]" title="WhatsApp">
+                            <i class="fab fa-whatsapp icon-style"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/diva-prayoga-26947b309" target="_blank" class="text-gray-600 hover:text-[#0077BE]" title="LinkedIn">
+                            <i class="fab fa-linkedin icon-style"></i>
+                        </a>
+                        <a href="https://github.com/Diva2004-cyber" target="_blank" class="text-gray-600 hover:text-[#0077BE]" title="GitHub">
+                            <i class="fab fa-github icon-style"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="ocean-gradient text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="wave-divider" style="height:50px; top:-50px; position:relative;">
+                 <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg); position:absolute; top:0; left:0;">
+                    <path d="M0 33.5C303 33.5 480 10 720 10C960 10 1137 33.5 1440 33.5V50H0V33.5Z" fill="#F0F8FF"/>
+                </svg>
+            </div>
+            <p class="mb-2">&copy; <span id="currentYear"></span> Diva Prayoga. All rights reserved.</p>
+            <p class="text-sm">Didesain dengan <i class="fas fa-heart text-red-400"></i> dan tema laut.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling untuk navigasi
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Logika untuk Konsultasi Ide Proyek AI
+        const getAiIdeasBtn = document.getElementById('getAiIdeasBtn');
+        const businessChallengeInput = document.getElementById('businessChallenge');
+        // const aiIdeasResultDiv = document.getElementById('aiIdeasResult'); // Tidak digunakan secara langsung lagi
+        const loadingMessage = document.getElementById('loadingMessage');
+        const ideasContainer = document.getElementById('ideasContainer');
+        const errorMessage = document.getElementById('errorMessage');
+
+        if (getAiIdeasBtn) { // Pastikan elemen ada sebelum menambahkan event listener
+            getAiIdeasBtn.addEventListener('click', async () => {
+                const challenge = businessChallengeInput.value.trim();
+                if (!challenge) {
+                    // Mengganti alert dengan pesan di UI jika memungkinkan, atau biarkan alert untuk kasus ini
+                    const tempErrorMsg = document.createElement('p');
+                    tempErrorMsg.textContent = 'Mohon masukkan deskripsi bisnis atau tantangan Anda.';
+                    tempErrorMsg.className = 'text-red-500 text-center mb-4';
+                    businessChallengeInput.parentNode.insertBefore(tempErrorMsg, businessChallengeInput.nextSibling);
+                    setTimeout(() => tempErrorMsg.remove(), 3000);
+                    return;
+                }
+
+                loadingMessage.classList.remove('hidden');
+                ideasContainer.innerHTML = ''; 
+                errorMessage.classList.add('hidden');
+                getAiIdeasBtn.disabled = true;
+
+                const promptText = `Anda adalah konsultan AI yang membantu calon klien menemukan solusi AI untuk bisnis mereka. Klien ini adalah seorang freelancer bernama Diva Prayoga dengan keahlian utama dalam:
+1.  Membuat Website: Merancang dan membangun website profesional (HTML, CSS, JavaScript, PHP, Node.js) dengan fokus pada user experience dan performa.
+2.  AI Video Konten Generatif: Membuat video kreatif otomatis dari teks, meliputi narasi suara, musik latar, dan sound effect.
+3.  Otomatisasi dengan AI Workflow & AI Agent: Membangun sistem otomatisasi cerdas (produksi konten, pengelolaan media sosial, chatbot, AI agent).
+
+Berdasarkan deskripsi tantangan atau bisnis dari calon klien berikut: "${challenge}", berikan 2-3 ide proyek AI inovatif dan praktis yang dapat dikerjakan oleh Diva Prayoga.
+Untuk setiap ide:
+- Berikan judul yang menarik (misalnya: **Judul Ide Proyek**).
+- Jelaskan secara singkat (1-2 kalimat) konsep proyeknya.
+- Sebutkan 1-2 manfaat utama bagi klien.
+Format respons Anda sebagai poin-poin yang jelas. Gunakan markdown untuk judul ide (bold).
+Contoh satu ide:
+**Asisten Virtual Cerdas untuk Toko Online**
+Konsep: Mengembangkan chatbot AI yang terintegrasi dengan platform e-commerce untuk menjawab pertanyaan pelanggan, memberikan rekomendasi produk, dan membantu proses checkout.
+Manfaat: Meningkatkan kepuasan pelanggan, mengurangi beban kerja tim support.`;
+
+
+                try {
+                    let chatHistory = [{ role: "user", parts: [{ text: promptText }] }];
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // API key akan di-inject oleh environment jika diperlukan
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        console.error('API Error:', errorData);
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        
+                        // Proses teks untuk tampilan yang lebih baik, termasuk menghandel markdown bold untuk judul
+                        let formattedHtml = '';
+                        const lines = text.split('\n');
+                        lines.forEach(line => {
+                            if (line.trim() === '') return;
+                            // Deteksi judul yang di-bold dengan markdown
+                            if (line.startsWith('**') && line.endsWith('**')) {
+                                formattedHtml += `<h4 class="text-lg font-semibold text-[#005A9C] mt-4 mb-1">${line.substring(2, line.length - 2)}</h4>`;
+                            } else if (line.startsWith('- ') || /^\d+\.\s/.test(line.trim())) { // Handle list items
+                                formattedHtml += `<p class="mb-2 text-gray-700 ml-4">${line.replace(/^- |^\d+\.\s/, '')}</p>`;
+                            } else {
+                                formattedHtml += `<p class="mb-2 text-gray-700">${line}</p>`;
+                            }
+                        });
+                        ideasContainer.innerHTML = `<div class="ai-idea-card p-4 rounded-md mt-4">${formattedHtml}</div>`;
+
+                    } else {
+                        console.error('Unexpected API response structure:', result);
+                        throw new Error('Gagal mendapatkan ide dari AI. Format respons tidak sesuai.');
+                    }
+
+                } catch (error) {
+                    console.error('Error fetching AI ideas:', error);
+                    errorMessage.textContent = `Maaf, terjadi kesalahan: ${error.message}. Coba lagi nanti.`;
+                    errorMessage.classList.remove('hidden');
+                } finally {
+                    loadingMessage.classList.add('hidden');
+                    getAiIdeasBtn.disabled = false;
+                }
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    (function() {
+        // Ganti dengan User ID, Service ID, dan Template ID Anda dari EmailJS
+        const USER_ID = 'MASUKKAN_USER_ID_ANDA'; 
+        const SERVICE_ID = 'MASUKKAN_SERVICE_ID_ANDA';
+        const TEMPLATE_ID = 'MASUKKAN_TEMPLATE_ID_ANDA';
+
+        if (USER_ID === 'MASUKKAN_USER_ID_ANDA' || SERVICE_ID === 'MASUKKAN_SERVICE_ID_ANDA' || TEMPLATE_ID === 'MASUKKAN_TEMPLATE_ID_ANDA') {
+            console.warn("EmailJS belum dikonfigurasi. Silakan masukkan User ID, Service ID, dan Template ID Anda.");
+        }
+
+        emailjs.init(USER_ID); 
+
+        const contactForm = document.getElementById('contactForm');
+        const formStatusDiv = document.getElementById('formStatus');
+
+        if (contactForm) { // Pastikan form ada
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                formStatusDiv.classList.add('hidden'); // Sembunyikan status sebelumnya
+                formStatusDiv.textContent = '';
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email_contact').value;
+                const message = document.getElementById('message').value;
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Mengirim...';
+
+                emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+                    from_name: name,
+                    from_email: email,
+                    message: message,
+                    to_email: 'amuadnasir@gmail.com' // Email tujuan Anda
+                })
+                .then(function(response) {
+                    formStatusDiv.textContent = 'Pesan berhasil dikirim!';
+                    formStatusDiv.className = 'form-status-message success'; // Hapus hidden, tambahkan kelas success
+                    formStatusDiv.classList.remove('hidden');
+                    contactForm.reset();
+                }, function(error) {
+                    formStatusDiv.textContent = 'Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung.';
+                    formStatusDiv.className = 'form-status-message error'; // Hapus hidden, tambahkan kelas error
+                    formStatusDiv.classList.remove('hidden');
+                    console.error('EmailJS Error:', error);
+                }).finally(function() {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Kirim Pesan';
+                });
+            });
+        }
+    })();
+    </script>
+
+</body>
+</html>
